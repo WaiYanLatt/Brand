@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: "Quicksand", sans-serif;
+}
+
+html , body , #app {
+     @apply bg-slate-50
+}
