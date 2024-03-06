@@ -5,7 +5,7 @@ export default {
       type: Object,
       required: true,
     },
-    grid : {
+    grid: {
       type: Boolean,
       required: true,
     },
@@ -14,8 +14,18 @@ export default {
 </script>
 
 <template>
-  <div class="w-full flex flex-row  bg-white rounded-md overflow-hidden shadow-md" :class="{'flex-col' : grid === true}">
-    <img :src="category.images[0]" alt="" class="w-[210px] h-[230px] flex-shrink-0" :class="{'w-full' : grid === true }"/>
+  <div
+    class="w-full flex flex-row bg-white rounded-md overflow-hidden shadow-md"
+    :class="{ 'flex-col': grid === true }"
+  >
+    <router-link :to="`/single-page/${this.category.id}`" class="flex-shrink-0">
+      <img
+        :src="category.images[0]"
+        alt=""
+        class="w-[210px] h-[230px] hover:brightness-75 duration-500 cursor-pointer"
+        :class="{ 'w-full': grid === true }"
+      />
+    </router-link>
     <div class="p-5">
       <h1 class="font-semibold text-lg">{{ category.title }}</h1>
       <h1 class="font-semibold text-xl">

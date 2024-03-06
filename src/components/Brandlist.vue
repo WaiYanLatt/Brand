@@ -232,15 +232,24 @@ export default {
     <div v-show="useCategories.itemsName === 'Mens-shirts'">
       <ul class="mt-5 *:mt-3">
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.The"
+          @change="useCategories.setBrandFilter('The')"
+          />
           <span class="font-semibold ml-2">The Warehouse</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Vintage"
+          @change="useCategories.setBrandFilter('Vintage')"
+          />
           <span class="font-semibold ml-2">Vintage Apparel</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Free"
+          @change="useCategories.setBrandFilter('Free')"
+          />
           <span class="font-semibold ml-2">FREE FIRE</span>
         </li>
       </ul>
@@ -248,15 +257,24 @@ export default {
     <div v-show="useCategories.itemsName === 'Mens-shoes'">
       <ul class="mt-5 *:mt-3">
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Sneakers"
+          @change="useCategories.setBrandFilter('Sneakers')"
+          />
           <span class="font-semibold ml-2">Sneakers</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.The"
+          @change="useCategories.setBrandFilter('The')"
+          />
           <span class="font-semibold ml-2">The Warehouse</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Rubber"
+          @change="useCategories.setBrandFilter('Rubber')"
+          />
           <span class="font-semibold ml-2">Rubber</span>
         </li>
       </ul>
@@ -264,19 +282,31 @@ export default {
     <div v-show="useCategories.itemsName === 'Mens-watches'">
       <ul class="mt-5 *:mt-3">
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Stainless"
+          @change="useCategories.setBrandFilter('Stainless')"
+          />
           <span class="font-semibold ml-2">Stainless</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Strap"
+          @change="useCategories.setBrandFilter('Strap')"
+          />
           <span class="font-semibold ml-2">Strap Skeleton</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.SKMEI"
+          @change="useCategories.setBrandFilter('SKMEI')"
+          />
           <span class="font-semibold ml-2">SKMEI 9117</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Naviforce"
+          @change="useCategories.setBrandFilter('Naviforce')"
+          />
           <span class="font-semibold ml-2">Naviforce</span>
         </li>
       </ul>
@@ -284,19 +314,31 @@ export default {
     <div v-show="useCategories.itemsName === 'Womens-watches'">
       <ul class="mt-5 *:mt-3">
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer"
+          v-model="useCategories.Bracelet"
+          @change="useCategories.setBrandFilter('Bracelet')"
+          />
           <span class="font-semibold ml-2">Bracelet</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Watch"
+          @change="useCategories.setBrandFilter('Watch')"
+          />
           <span class="font-semibold ml-2">Watch Pearls</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Luxury"
+          @change="useCategories.setBrandFilter('Luxury')"
+          />
           <span class="font-semibold ml-2">Luxury Digital</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Eastern"
+          @change="useCategories.setBrandFilter('Eastern')"
+          />
           <span class="font-semibold ml-2">Eastern Watches</span>
         </li>
       </ul>
@@ -304,19 +346,31 @@ export default {
     <div v-show="useCategories.itemsName === 'Womens-bags'">
       <ul class="mt-5 *:mt-3">
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Steal"
+          @change="useCategories.setBrandFilter('Steal')"
+          />
           <span class="font-semibold ml-2">Steal Frame</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Copenhagen"
+          @change="useCategories.setBrandFilter('Copenhagen')"
+          />
           <span class="font-semibold ml-2">Copenhagen Luxe</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Bracelet"
+          @change="useCategories.setBrandFilter('Bracelet')"
+          />
           <span class="font-semibold ml-2">Bracelet</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.LouisWill"
+          @change="useCategories.setBrandFilter('LouisWill')"
+          />
           <span class="font-semibold ml-2">LouisWill</span>
         </li>
       </ul>
@@ -324,19 +378,31 @@ export default {
     <div v-show="useCategories.itemsName === 'Womens-jewellery'">
       <ul class="mt-5 *:mt-3">
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Cuff"
+          @change="useCategories.setBrandFilter('Cuff')"
+          />
           <span class="font-semibold ml-2">Cuff Butterfly</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Fashion"
+          @change="useCategories.setBrandFilter('Fashion')"
+          />
           <span class="font-semibold ml-2">Fashion Jewellery</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Copenhagen"
+          @change="useCategories.setBrandFilter('Copenhagen')"
+          />
           <span class="font-semibold ml-2">Copenhagen Luxe</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Darojay"
+          @change="useCategories.setBrandFilter('Darojay')"
+          />
           <span class="font-semibold ml-2">Darojay</span>
         </li>
       </ul>
@@ -344,19 +410,31 @@ export default {
     <div v-show="useCategories.itemsName === 'Lighting'">
       <ul class="mt-5 *:mt-3">
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.YIOSI"
+          @change="useCategories.setBrandFilter('YIOSI')"
+          />
           <span class="font-semibold ml-2">YIOSI</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.Ifei"
+          @change="useCategories.setBrandFilter('Ifei')"
+          />
           <span class="font-semibold ml-2">Ifei Home</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.DADAWU"
+          @change="useCategories.setBrandFilter('DADAWU')"
+          />
           <span class="font-semibold ml-2">DADAWU</span>
         </li>
         <li>
-          <input type="checkbox" class="cursor-pointer" />
+          <input type="checkbox" class="cursor-pointer" 
+          v-model="useCategories.lighting"
+          @change="useCategories.setBrandFilter('lighting')"
+          />
           <span class="font-semibold ml-2">lightingbrilliance</span>
         </li>
       </ul>

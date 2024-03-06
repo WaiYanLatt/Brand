@@ -17,13 +17,11 @@ export default {
     async smartphones() {
       const categories = await this.useCategories.getCategories("smartphones");
       this.useCategories.setCategories(categories);
-      this.$router.push("/category");
       this.useCategories.itemsName = "Smart phones";
     },
     async laptops() {
       const categories = await this.useCategories.getCategories("laptops");
       this.useCategories.setCategories(categories);
-      this.$router.push("/category");
       this.useCategories.itemsName = "Laptops";
     },
     async homedecoration() {
@@ -31,7 +29,6 @@ export default {
         "home-decoration"
       );
       this.useCategories.setCategories(categories);
-      this.$router.push("/category");
       this.useCategories.itemsName = "Home-decoration";
     },
     async womensdresses() {
@@ -39,25 +36,21 @@ export default {
         "womens-dresses"
       );
       this.useCategories.setCategories(categories);
-      this.$router.push("/category");
       this.useCategories.itemsName = "Womens-dresses";
     },
     async womenshoes() {
       const categories = await this.useCategories.getCategories("womens-shoes");
       this.useCategories.setCategories(categories);
-      this.$router.push("/category");
       this.useCategories.itemsName = "Womens-shoes";
     },
     async menshirts() {
       const categories = await this.useCategories.getCategories("mens-shirts");
       this.useCategories.setCategories(categories);
-      this.$router.push("/category");
       this.useCategories.itemsName = "Mens-shirts";
     },
     async menshoes() {
       const categories = await this.useCategories.getCategories("mens-shoes");
       this.useCategories.setCategories(categories);
-      this.$router.push("/category");
       this.useCategories.itemsName = "Mens-shoes";
     },
     toHome() {
@@ -161,55 +154,69 @@ export default {
         :class="{ 'top-12 z-[10]': cat === true }"
       >
         <ul class="flex items-center *:mr-5">
-          <li
-            @click="smartphones"
-            class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
-          >
-            Smartphones
-            <i class="fa-solid fa-angle-right ml-2"></i>
-          </li>
-          <li
-            @click="laptops"
-            class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
-          >
-            Laptops
-            <i class="fa-solid fa-angle-right ml-2"></i>
-          </li>
-          <li
-            @click="homedecoration"
-            class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
-          >
-            Home-decoration
-            <i class="fa-solid fa-angle-right ml-2"></i>
-          </li>
-          <li
-            @click="womensdresses"
-            class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
-          >
-            Womens-dresses
-            <i class="fa-solid fa-angle-right ml-2"></i>
-          </li>
-          <li
-            @click="womenshoes"
-            class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
-          >
-            Womens-shoes
-            <i class="fa-solid fa-angle-right ml-2"></i>
-          </li>
-          <li
-            @click="menshirts"
-            class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
-          >
-            Mens-shirts
-            <i class="fa-solid fa-angle-right ml-2"></i>
-          </li>
-          <li
-            @click="menshoes"
-            class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
-          >
-            Mens-shoes
-            <i class="fa-solid fa-angle-right ml-2"></i>
-          </li>
+          <router-link to="/category">
+            <li
+              @click="smartphones"
+              class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
+            >
+              Smartphones
+              <i class="fa-solid fa-angle-right ml-2"></i>
+            </li>
+          </router-link>
+          <router-link to="/category">
+            <li
+              @click="laptops"
+              class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
+            >
+              Laptops
+              <i class="fa-solid fa-angle-right ml-2"></i>
+            </li>
+          </router-link>
+          <router-link to="/category">
+            <li
+              @click="homedecoration"
+              class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
+            >
+              Home-decoration
+              <i class="fa-solid fa-angle-right ml-2"></i>
+            </li>
+          </router-link>
+          <router-link to="/category">
+            <li
+              @click="womensdresses"
+              class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
+            >
+              Womens-dresses
+              <i class="fa-solid fa-angle-right ml-2"></i>
+            </li>
+          </router-link>
+          <router-link to="/category">
+            <li
+              @click="womenshoes"
+              class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
+            >
+              Womens-shoes
+              <i class="fa-solid fa-angle-right ml-2"></i>
+            </li>
+          </router-link>
+          <router-link to="/category">
+            <li
+              @click="menshirts"
+              class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
+            >
+              Mens-shirts
+              <i class="fa-solid fa-angle-right ml-2"></i>
+            </li>
+          </router-link>
+          <router-link to="/category">
+            <li
+              @click="menshoes"
+              class="font-semibold hover:text-gray-500 text-black duration-500 cursor-pointer"
+            >
+              Mens-shoes
+              <i class="fa-solid fa-angle-right ml-2"></i>
+            </li>
+          </router-link>
         </ul>
       </div>
     </div>

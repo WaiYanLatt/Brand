@@ -11,13 +11,13 @@ export default {
 
 <template>
   <div class="w-full bg-white border rounded-lg shadow-lg overflow-hidden">
-    <a href="#">
+    <router-link :to="`single-page/${product.id}`" >
       <img
         class="w-full h-56 hover:scale-110 duration-500 hover:brightness-75"
         :src="product.images[0]"
         alt="product image"
       />
-    </a>
+    </router-link>
     <div class="flex items-center justify-between p-4">
        <div>
         <span class="text-md font-semibold text-gray-900 dark:text-white"

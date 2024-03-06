@@ -31,9 +31,30 @@ const useCategories = defineStore("category", {
       Sandals: false,
       Synthetic: false,
       Arrivals: false,
-      The : false,
-      Vintage : false,
-      Free : false,
+      The: false,
+      Vintage: false,
+      Free: false,
+      Sneakers: false,
+      Rubber: false,
+      Stainless : false,
+      Strap : false,
+      SKMEI : false,
+      Naviforce : false, 
+      Bracelet : false,
+      Watch : false,
+      Luxury : false, 
+      Eastern : false,
+      Steal : false,
+      Copenhagen : false,
+      LouisWill : false,
+      Cuff : false,
+      Fashion : false,
+      Darojay : false,
+      YIOSI : false,
+      Ifei : false,
+      DADAWU : false,
+      lighting : false,
+      reset : false,
     };
   },
   getters: {
@@ -107,18 +128,54 @@ const useCategories = defineStore("category", {
           (cate) => cate.brand === "Arrivals Genuine"
         );
       } else if (this.filterStatus === "The") {
-        return this.categories.filter(
-          (cate) => cate.brand === "The Warehouse"
-        );
+        return this.categories.filter((cate) => cate.brand === "The Warehouse");
       } else if (this.filterStatus === "Vintage") {
         return this.categories.filter(
           (cate) => cate.brand === "Vintage Apparel"
         );
       } else if (this.filterStatus === "Free") {
-        return this.categories.filter(
-          (cate) => cate.brand === "FREE FIRE"
-        );
-      }
+        return this.categories.filter((cate) => cate.brand === "FREE FIRE");
+      } else if (this.filterStatus === "Sneakers") {
+        return this.categories.filter((cate) => cate.brand === "Sneakers");
+      } else if (this.filterStatus === "Rubber") {
+        return this.categories.filter((cate) => cate.brand === "Rubber");
+      } else if (this.filterStatus === "Stainless") {
+        return this.categories.filter((cate) => cate.brand === "Stainless");
+      } else if (this.filterStatus === "Strap") {
+        return this.categories.filter((cate) => cate.brand === "Strap Skeleton");
+      } else if (this.filterStatus === "SKMEI") {
+        return this.categories.filter((cate) => cate.brand === "SKMEI 9117");
+      } else if (this.filterStatus === "Naviforce") {
+        return this.categories.filter((cate) => cate.brand === "Naviforce");
+      } else if (this.filterStatus === "Bracelet") {
+        return this.categories.filter((cate) => cate.brand === "Bracelet");
+      } else if (this.filterStatus === "Watch") {
+        return this.categories.filter((cate) => cate.brand === "Watch Pearls");
+      } else if (this.filterStatus === "Luxury") {
+        return this.categories.filter((cate) => cate.brand === "Luxury Digital");
+      } else if (this.filterStatus === "Eastern") {
+        return this.categories.filter((cate) => cate.brand === "Eastern Watches");
+      } else if (this.filterStatus === "Steal") {
+        return this.categories.filter((cate) => cate.brand === "Steal Frame");
+      } else if (this.filterStatus === "Copenhagen") {
+        return this.categories.filter((cate) => cate.brand === "Copenhagen Luxe");
+      } else if (this.filterStatus === "LouisWill") {
+        return this.categories.filter((cate) => cate.brand === "LouisWill");
+      } else if (this.filterStatus === "Cuff") {
+        return this.categories.filter((cate) => cate.brand === "Cuff Butterfly");
+      } else if (this.filterStatus === "Fashion") {
+        return this.categories.filter((cate) => cate.brand === "Fashion Jewellery");
+      } else if (this.filterStatus === "Darojay") {
+        return this.categories.filter((cate) => cate.brand === "Darojay");
+      } else if (this.filterStatus === "YIOSI") {
+        return this.categories.filter((cate) => cate.brand === "YIOSI");
+      } else if (this.filterStatus === "Ifei") {
+        return this.categories.filter((cate) => cate.brand === "Ifei Home");
+      } else if (this.filterStatus === "DADAWU") {
+        return this.categories.filter((cate) => cate.brand === "DADAWU");
+      } else if (this.filterStatus === "lighting") {
+        return this.categories.filter((cate) => cate.brand === "lightingbrilliance");
+      } 
     },
   },
   actions: {
@@ -151,16 +208,20 @@ const useCategories = defineStore("category", {
     setPriceFilter(price) {
       if (this[`lower${price}`] === true) {
         this.setFilterStatus(`lower${price}`);
+        this.reset = true;
       } else {
         this.setFilterStatus("");
+        this.reset = false;
       }
     },
 
     setBrandFilter(brand) {
       if (this[`${brand}`] === true) {
         this.setFilterStatus(`${brand}`);
+        this.reset = true;
       } else {
         this.setFilterStatus("");
+        this.reset = false;
       }
     },
   },

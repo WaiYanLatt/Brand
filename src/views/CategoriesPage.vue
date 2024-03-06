@@ -152,7 +152,7 @@ export default {
       </div>
       <div class="w-full ml-10 min-h-screen">
         <div
-          class="py-3 px-5 bg-white shadow-sm border flex items-center sticky top-32 justify-between rounded-md"
+          class="py-3 px-5 z-10 bg-white shadow-sm border flex items-center sticky top-32 justify-between rounded-md"
         >
           <h1 class="font-semibold">
             {{ useCategories.categories.length }} items in
