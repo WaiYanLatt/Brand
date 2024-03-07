@@ -1,13 +1,19 @@
 <script>
 import useCategories from "@/stores/Categories";
+import useSearch from "@/stores/srp.js";
+
 
 export default {
   data() {
     return {
       useCategories: useCategories(),
+      useSearch: useSearch(),
       cat: false,
       showIcon: false,
     };
+  },
+  watch: {
+    searchQuery : "searchCity",
   },
   methods: {
     showCat() {
@@ -53,6 +59,13 @@ export default {
       this.useCategories.setCategories(categories);
       this.useCategories.itemsName = "Mens-shoes";
     },
+    async searchCity() {
+      const results = await this.useSearch.getSearch(this.useSearch.searchQuery.toLowerCase());
+      this.useSearch.setSearch(results);
+      this.$router.push('/srp');
+      this.useSearch.res = this.useSearch.searchQuery;
+      this.useSearch.searchQuery = '';
+    },
     toHome() {
       this.$router.push("/");
     },
@@ -73,30 +86,22 @@ export default {
           <h1 class="text-2xl font-semibold text-blue-500 ml-3">Brand</h1>
         </div>
         <div>
-          <div
+          <form
+            @submit.prevent="searchCity"
             class="border-2 flex items-center border-blue-500 w-[650px] rounded-lg overflow-hidden"
           >
             <input
               type="text"
-              class="focus:outline-none border-0 pl-3 py-2 font-semibold border-e-2 w-[400px] border-e-blue-500"
+              class="focus:outline-none border-0 pl-3 py-2 font-semibold border-e-2 w-[550px] border-e-blue-500"
+              v-model="useSearch.searchQuery"
               placeholder="Search"
             />
-            <button
-              class="px-3 font-semibold border-e-2 w-[150px] border-blue-500 py-2"
-            >
-              All category
-              <i class="fa-solid fa-angle-down ml-3"></i>
+            <button class="bg-blue-500 py-2 w-[100px] text-white font-semibold" @click.prevent="searchCity">
+              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <button class="bg-blue-500 py-2 w-[100px] text-white font-semibold">
-              Search
-            </button>
-          </div>
+          </form>
         </div>
         <div class="flex justify-between *:mr-3">
-          <div class="text-center cursor-pointer">
-            <i class="fa-solid fa-user text-lg text-gray-500"></i>
-            <h1 class="font-semibold text-gray-400 text-sm">Profile</h1>
-          </div>
           <div class="text-center cursor-pointer">
             <i class="fa-solid fa-cart-shopping text-lg text-gray-500"></i>
             <h1 class="font-semibold text-gray-400 text-sm">My Cart</h1>

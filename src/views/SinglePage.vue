@@ -2,6 +2,7 @@
 import useProduct from "@/stores/products.js";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
+import RelCard from '@/components/RelCard.vue'
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,6 +22,7 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+    RelCard : RelCard,
   },
   setup() {
     return {
@@ -35,6 +37,11 @@ export default {
       );
       return Product;
     },
+    relatedProduct(){
+      const productCategory = this.currentProduct.category;
+      const categories = this.useProduct.products.filter(pro => pro.category === productCategory);
+      return categories;
+    }
   },
   methods: {
     minus() {
@@ -174,6 +181,21 @@ export default {
           </button>
         </div>
       </div>
+    </div>
+    <div class="bg-white shadow-md border min-h-[300px] rounded-lg p-5 mt-20">
+       <h1 class="font-semibold text-xl">Related Products</h1>
+       <div class="grid grid-cols-5 gap-5 mt-10">
+        <RelCard v-for="rel in relatedProduct" :rel="rel"/>
+       </div>
+    </div>
+    <div class="bg-gradient-to-r from-[#237CFF] to-[#005ADE] p-5 mt-10 rounded-md shadow-lg">
+       <div class="flex items-center justify-between">
+          <div>
+             <h1 class="text-xl font-semibold text-white">Super discount on more than 100 USD</h1>
+              <p class="font-semibold text-white text-sm">Have you ever finally just write dummy info</p>
+          </div>
+          <button class="bg-[#FF9017] py-3 px-5 text-white font-semibold rounded-lg">Shop Now</button>
+       </div>
     </div>
   </div>
 </template>

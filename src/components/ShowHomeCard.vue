@@ -21,12 +21,14 @@ export default {
        <h1 class="font-semibold text-sm text-wrap">{{ product.title }}</h1>
        <h1 class="font-semibold text-sm text-gray-500">USD {{ product.price }}</h1>
      </div>
-    <img
+     <router-link :to="`single-page/${this.product.id}`">
+      <img
       class="w-[72px] h-[72px] rounded-lg mt-5 ml-3"
       :class="{ 'wobble-hor-bottom': animation === true }"
       :src="product.images[0]"
       alt="product image"
     />
+    </router-link>
     </div>
   </div>
 </template>

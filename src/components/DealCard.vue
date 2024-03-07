@@ -16,12 +16,14 @@ export default {
 
 <template>
   <div class="cursor-pointer border-e" @mouseover="animation = true" @mouseleave="animation = false">
-    <img
+    <router-link :to="`single-page/${this.product.id}`">
+      <img
       class="w-32 h-32 rounded-lg"
       :class="{ 'wobble-hor-bottom': animation === true }"
       :src="product.images[0]"
       alt="product image"
     />
+    </router-link>
     <button
       class="bg-[#FFE3E3] text-red-500 font-semibold my-3 flex justify-center items-center p-1 ml-10 text-xs rounded-md"
     >

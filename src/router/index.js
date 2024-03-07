@@ -16,6 +16,11 @@ const routes = [
     name: "Single-page", 
     component: () => import('@/views/SinglePage.vue'), 
   },
+  {
+    path: "/srp", 
+    name: "Search-result-page", 
+    component: () => import('@/views/SRP.vue'), 
+  },
 ];
 const router = createRouter({
   history: createWebHistory(),
