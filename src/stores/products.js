@@ -3,6 +3,7 @@ const useProduct = defineStore("product", {
   state: () => {
     return {
       products: [],
+      order : [],
     };
   },
   actions: {

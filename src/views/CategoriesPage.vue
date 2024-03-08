@@ -115,35 +115,44 @@ export default {
                 type="checkbox"
                 class="cursor-pointer"
                 v-model="useCategories.lower1200"
-                @change="useCategories.setPriceFilter(1200)"/>
+                @change="useCategories.setPriceFilter(1200)"
+              />
               <span class="font-semibold ml-2">Lower than $1200</span>
             </li>
             <li>
-              <input type="checkbox" class="cursor-pointer"
-              v-model="useCategories.lower1000"
-              @change="useCategories.setPriceFilter(1000)"
+              <input
+                type="checkbox"
+                class="cursor-pointer"
+                v-model="useCategories.lower1000"
+                @change="useCategories.setPriceFilter(1000)"
               />
-              
+
               <span class="font-semibold ml-2">Lower than $1000</span>
             </li>
             <li>
-              <input type="checkbox" class="cursor-pointer" 
-              v-model="useCategories.lower700"
-              @change="useCategories.setPriceFilter(700)"
+              <input
+                type="checkbox"
+                class="cursor-pointer"
+                v-model="useCategories.lower700"
+                @change="useCategories.setPriceFilter(700)"
               />
               <span class="font-semibold ml-2">Lower than $700</span>
             </li>
             <li>
-              <input type="checkbox" class="cursor-pointer"
-              v-model="useCategories.lower500"
-              @change="useCategories.setPriceFilter(500)"
+              <input
+                type="checkbox"
+                class="cursor-pointer"
+                v-model="useCategories.lower500"
+                @change="useCategories.setPriceFilter(500)"
               />
               <span class="font-semibold ml-2">Lower than $500</span>
             </li>
             <li>
-              <input type="checkbox" class="cursor-pointer"
-              v-model="useCategories.lower400"
-              @change="useCategories.setPriceFilter(400)"
+              <input
+                type="checkbox"
+                class="cursor-pointer"
+                v-model="useCategories.lower400"
+                @change="useCategories.setPriceFilter(400)"
               />
               <span class="font-semibold ml-2">Lower than $400</span>
             </li>
@@ -158,6 +167,13 @@ export default {
             {{ useCategories.categories.length }} items in
             {{ useCategories.itemsName }}
           </h1>
+          <button
+            v-show="useCategories.reset === true"
+            @click="useCategories.resetData"
+            class="border shadow-md px-5 py-1 text-lg font-semibold rounded-full"
+          >
+            reset <i class="fa-solid fa-xmark text-blue-500"></i>
+          </button>
           <div>
             <button class="px-3 py-2 border rounded-md" @click="grid1">
               <i class="fa-solid fa-grip"></i>

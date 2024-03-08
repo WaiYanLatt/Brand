@@ -1,19 +1,25 @@
 <script>
 import useCategories from "@/stores/Categories";
 import useSearch from "@/stores/srp.js";
-
+import useProduct from "@/stores/products.js";
+import orderCard from "@/components/orderCard.vue";
 
 export default {
   data() {
     return {
       useCategories: useCategories(),
       useSearch: useSearch(),
+      useProduct: useProduct(),
       cat: false,
       showIcon: false,
+      slide: false,
     };
   },
+  components: {
+    orderCard: orderCard,
+  },
   watch: {
-    searchQuery : "searchCity",
+    searchQuery: "searchCity",
   },
   methods: {
     showCat() {
@@ -60,14 +66,22 @@ export default {
       this.useCategories.itemsName = "Mens-shoes";
     },
     async searchCity() {
-      const results = await this.useSearch.getSearch(this.useSearch.searchQuery.toLowerCase());
+      const results = await this.useSearch.getSearch(
+        this.useSearch.searchQuery.toLowerCase()
+      );
       this.useSearch.setSearch(results);
-      this.$router.push('/srp');
+      this.$router.push("/srp");
       this.useSearch.res = this.useSearch.searchQuery;
-      this.useSearch.searchQuery = '';
+      this.useSearch.searchQuery = "";
     },
     toHome() {
       this.$router.push("/");
+    },
+    shop() {
+      this.slide = true;
+    },
+    unShop() {
+      this.slide = false;
     },
   },
 };
@@ -96,14 +110,30 @@ export default {
               v-model="useSearch.searchQuery"
               placeholder="Search"
             />
-            <button class="bg-blue-500 py-2 w-[100px] text-white font-semibold" @click.prevent="searchCity">
+            <button
+              class="bg-blue-500 py-2 w-[100px] text-white font-semibold"
+              @click.prevent="searchCity"
+            >
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
         </div>
         <div class="flex justify-between *:mr-3">
           <div class="text-center cursor-pointer">
-            <i class="fa-solid fa-cart-shopping text-lg text-gray-500"></i>
+            <div class="relative inline-flex w-fit mt-2">
+              <div
+                class="absolute bottom-auto left-auto right-0 top-0 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 whitespace-nowrap rounded-full bg-red-500 px-2 py-1 text-center align-baseline text-xs font-bold leading-none text-white"
+              >
+                {{ this.useProduct.order.length }}
+              </div>
+              <button
+                type="button"
+                class="duration-700 font-semibold"
+                @click="shop"
+              >
+                <i class="fa-solid fa-cart-shopping text-blue-500 text-2xl"></i>
+              </button>
+            </div>
             <h1 class="font-semibold text-gray-400 text-sm">My Cart</h1>
           </div>
         </div>
@@ -223,6 +253,22 @@ export default {
             </li>
           </router-link>
         </ul>
+      </div>
+    </div>
+    <!-- toggle -->
+    <div
+      class="bg-white h-screen w-[330px] z-30 fixed no-scrollbar duration-700 top-0 right-[-100%] shadow-lg p-4 overflow-y-scroll"
+      :class="{ '!right-[0%]': slide === true }"
+    >
+      <button
+        @click="unShop"
+        class="w-10 h-10 rounded-full border bg-white shadow-md flex items-center justify-center fixed top-5"
+      >
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+      <!-- orderCard -->
+      <div class="mt-16">
+        <orderCard v-for="ord in useProduct.order" :key="ord.id" :ord="ord" />
       </div>
     </div>
   </nav>

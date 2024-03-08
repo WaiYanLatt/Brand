@@ -1,11 +1,24 @@
 <script>
+import useProduct from '@/stores/products.js'
+
 export default {
+  data(){
+    return {
+       useProduct : useProduct(),
+    }
+  },
   props: {
     product: {
       type: Object,
       required: true,
     },
   },
+  methods : {
+     addProduct() {
+        const guestOrder = this.useProduct.products.find(pro => pro.id === this.product.id);
+        this.useProduct.order.push(guestOrder);
+     }
+  }
 };
 </script>
 
@@ -13,7 +26,7 @@ export default {
   <div class="w-full bg-white border rounded-lg shadow-lg overflow-hidden">
     <router-link :to="`single-page/${product.id}`" >
       <img
-        class="w-full h-56 hover:scale-110 duration-500 hover:brightness-75"
+        class="w-full h-56 hover:scale-110 cursor-pointer duration-500 hover:brightness-75"
         :src="product.images[0]"
         alt="product image"
       />
@@ -30,6 +43,7 @@ export default {
       </button>
        </div>
       <button
+      @click="addProduct"
         class="text-white bg-blue-700 hover:bg-blue-800 px-3 py-2 rounded-lg"
       >
         <i class="fa-solid fa-shopping-cart text-white"></i>

@@ -224,6 +224,62 @@ const useCategories = defineStore("category", {
         this.reset = false;
       }
     },
+
+    resetData(){
+      this.reset = false;
+      if(this.reset === false){
+        this.filterStatus = '';
+        this.lower1200 = false;
+        this.lower1000 = false;
+        this.lower700 = false;
+        this.lower500 = false;
+        this.lower400 = false;
+        this.Apple = false;
+        this.Samsung = false;
+        this.Huawei = false;
+        this.OPPO = false;
+        this.HP = false;
+        this.Microsoft = false;
+        this.Infinix = false;
+        this.Golden = false;
+        this.luxury = false;
+        this.LED = false;
+        this.Flying = false;
+        this.Boho = false;
+        this.IELGY = false;
+        this.Ghazi = false;
+        this.Digital = false;
+        this.RED = false;
+        this.IELGYF = false;
+        this.Maasai = false;
+        this.Sandals = false;
+        this.Synthetic = false;
+        this.Arrivals = false;
+        this.The = false;
+        this.Vintage = false;
+        this.Free = false;
+        this.Sneakers = false;
+        this.Rubber = false;
+        this.Stainless  = false;
+        this.Strap  = false;
+        this.SKMEI  = false;
+        this.Naviforce  = false; 
+        this.Bracelet  = false;
+        this.Watch  = false;
+        this.Luxury  = false; 
+        this.Eastern  = false;
+        this.Steal  = false;
+        this.Copenhagen  = false;
+        this.LouisWill  = false;
+        this.Cuff  = false;
+        this.Fashion  = false;
+        this.Darojay  = false;
+        this.YIOSI  = false;
+        this.Ifei  = false;
+        this.DADAWU  = false;
+        this.lighting  = false;
+      }
+    }
   },
 });
 export default useCategories;
