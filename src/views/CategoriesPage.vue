@@ -55,12 +55,12 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-16 mt-40 mb-20">
-    <div class="flex relative">
-      <div class="w-[350px] min-h-screen">
+  <div class="container mx-auto lg:px-16 px-5 lg:mt-40 mt-36 lg:mb-20 mb-10">
+    <div class="flex lg:flex-row flex-col relative">
+      <div class="w-[350px]  lg:min-h-screen h-auto mb-10 lg:mb-0">
         <div class="border-t mt-3">
           <h1 class="font-semibold text-xl mt-3">Category</h1>
-          <ul class="mt-5 *:mt-3">
+          <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
             <li>
               <button
                 class="font-semibold hover:underline duration-500"
@@ -105,11 +105,11 @@ export default {
         </div>
         <div class="border-t mt-3">
           <h1 class="font-semibold text-xl mt-3">Brands</h1>
-          <Brandlist />
+          <Brandlist/>
         </div>
         <div class="border-t mt-3">
           <h1 class="font-semibold text-xl mt-3">Prices</h1>
-          <ul class="mt-5 *:mt-3">
+          <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
             <li>
               <input
                 type="checkbox"
@@ -159,9 +159,9 @@ export default {
           </ul>
         </div>
       </div>
-      <div class="w-full ml-10 min-h-screen">
+      <div class="w-full lg:ml-10 ml-0 min-h-screen">
         <div
-          class="py-3 px-5 z-10 bg-white shadow-sm border flex items-center sticky top-32 justify-between rounded-md"
+          class="py-3 lg:px-5 px-2 z-10 bg-white shadow-sm border flex items-center sticky lg:top-32 top-36 justify-between rounded-md"
         >
           <h1 class="font-semibold">
             {{ useCategories.categories.length }} items in
@@ -170,7 +170,7 @@ export default {
           <button
             v-show="useCategories.reset === true"
             @click="useCategories.resetData"
-            class="border shadow-md px-5 py-1 text-lg font-semibold rounded-full"
+            class="border shadow-md lg:px-5 px-3 py-1 lg:text-lg text-sm font-semibold rounded-full"
           >
             reset <i class="fa-solid fa-xmark text-blue-500"></i>
           </button>
@@ -184,8 +184,8 @@ export default {
           </div>
         </div>
         <div
-          class="grid grid-cols-1 mt-5 gap-3"
-          :class="{ 'grid-cols-3': grid === true }"
+          class="grid lg:grid-cols-1 mt-5 gap-3"
+          :class="{ 'lg:!grid-cols-3 !grid-cols-1': grid === true }"
         >
           <CatagoriesCard
             v-for="category in useCategories.filteredCategory"

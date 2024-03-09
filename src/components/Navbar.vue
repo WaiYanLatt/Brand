@@ -91,7 +91,8 @@ export default {
   <nav class="fixed top-0 w-full z-20">
     <div class="container-fluid mx-auto lg:px-28 px-5 bg-white py-3 border-b w-full">
       <div class="flex justify-between items-center">
-        <div class="flex items-center">
+        <router-link to="/">
+          <div class="flex items-center">
           <div
             class="bg-blue-500 rounded-md w-10 h-10 lg:mr-0  flex items-center justify-center"
           >
@@ -99,6 +100,7 @@ export default {
           </div>
           <h1 class="text-2xl font-semibold text-blue-500 ml-3 hidden lg:block">Brand</h1>
         </div>
+        </router-link>
         <div>
           <form
             @submit.prevent="searchProduct"

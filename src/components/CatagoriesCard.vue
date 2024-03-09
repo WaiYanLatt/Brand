@@ -22,8 +22,8 @@ export default {
       <img
         :src="category.images[0]"
         alt=""
-        class="w-[210px] h-[230px] hover:brightness-75 duration-500 cursor-pointer"
-        :class="{ 'w-full': grid === true }"
+        class="lg:w-[210px] w-[150px] lg:h-[230px] h-full hover:brightness-75 duration-500 cursor-pointer"
+        :class="{ '!w-full': grid === true }"
       />
     </router-link>
     <div class="p-5">

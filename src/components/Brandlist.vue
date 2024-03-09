@@ -13,7 +13,7 @@ export default {
 <template>
   <div>
     <div v-show="useCategories.itemsName === 'Smart phones'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input
             type="checkbox"
@@ -53,7 +53,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Laptops'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input
             type="checkbox"
@@ -102,7 +102,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Home-decoration'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input
             type="checkbox"
@@ -151,7 +151,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Womens-dresses'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input
             type="checkbox"
@@ -191,7 +191,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Womens-shoes'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input type="checkbox" class="cursor-pointer" 
           v-model="useCategories.IELGYF"
@@ -230,7 +230,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Mens-shirts'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input type="checkbox" class="cursor-pointer" 
           v-model="useCategories.The"
@@ -255,7 +255,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Mens-shoes'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input type="checkbox" class="cursor-pointer" 
           v-model="useCategories.Sneakers"
@@ -280,7 +280,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Mens-watches'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input type="checkbox" class="cursor-pointer" 
           v-model="useCategories.Stainless"
@@ -312,7 +312,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Womens-watches'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input type="checkbox" class="cursor-pointer"
           v-model="useCategories.Bracelet"
@@ -344,7 +344,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Womens-bags'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input type="checkbox" class="cursor-pointer" 
           v-model="useCategories.Steal"
@@ -376,7 +376,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Womens-jewellery'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input type="checkbox" class="cursor-pointer" 
           v-model="useCategories.Cuff"
@@ -408,7 +408,7 @@ export default {
       </ul>
     </div>
     <div v-show="useCategories.itemsName === 'Lighting'">
-      <ul class="mt-5 *:mt-3">
+      <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
         <li>
           <input type="checkbox" class="cursor-pointer" 
           v-model="useCategories.YIOSI"

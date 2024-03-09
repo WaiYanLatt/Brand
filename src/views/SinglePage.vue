@@ -74,11 +74,11 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-16 mt-40 mb-20">
+  <div class="container mx-auto lg:px-16 px-5 mt-40 mb-20">
        <!-- alert box -->
        <div
       v-show="alertShow === true"
-      class="bg-white fixed shadow-lg border lg:bottom-[30%] z-20 bottom-[50%] left-[25%] w-[50%] lg:w-[50%] lg:py-5 py-3 rounded-lg"
+      class="bg-white fixed shadow-lg border lg:bottom-[30%] z-20 bottom-[50%] left-[5%] w-[90%] lg:w-[50%] lg:py-5 py-3 px-5 rounded-lg"
     >
       <h1 class="text-center font-semibold text-shadow lg:text-[15px] text-xs">Please add 1 pec or more but 1pec order in cart because just ui.</h1>
     </div>
@@ -88,8 +88,8 @@ export default {
     </button>
    </router-link>
     <div class="bg-white shadow-md border min-h-[500px] rounded-lg py-5">
-      <div class="flex">
-        <div class="w-[650px] p-5">
+      <div class="flex lg:flex-row flex-col">
+        <div class="lg:w-[650px] w-full p-5">
           <swiper
             :effect="'coverflow'"
             :grabCursor="true"
@@ -187,14 +187,21 @@ export default {
               Price : $ {{ currentProduct.price * stockPecs }}
             </button>
             <button
-              class="w-28 font-semibold text-white py-3 ml-5 bg-blue-500 rounded-lg cursor-pointer"
+              class="w-28 lg:block hidden font-semibold text-white py-3 ml-5 bg-blue-500 rounded-lg cursor-pointer"
               v-show="this.stockPecs !== 0"
               @click="reset"
             >
               Reset
             </button>
           </div>
-          <button @click="addProduct" class="w-full text-white font-semibold bg-blue-500 py-3 mt-5 rounded-lg">
+          <button
+              class="w-full lg:hidden block font-semibold text-white py-3 mt-5 bg-blue-500 rounded-lg cursor-pointer"
+              v-show="this.stockPecs !== 0"
+              @click="reset"
+            >
+              Reset
+            </button>
+          <button @click="addProduct" class="w-full text-white font-semibold bg-blue-500 py-3 lg:mt-5 mt-3 rounded-lg">
             <i class="fa-solid fa-cart-shopping mr-5"></i>
               Buy {{ currentProduct.title }}
           </button>
@@ -203,17 +210,17 @@ export default {
     </div>
     <div class="bg-white shadow-md border min-h-[300px] rounded-lg p-5 mt-20">
        <h1 class="font-semibold text-xl">Related Products</h1>
-       <div class="grid grid-cols-5 gap-5 mt-10">
+       <div class="grid lg:grid-cols-5 grid-cols-2 gap-5 mt-10">
         <RelCard v-for="rel in relatedProduct" :rel="rel"/>
        </div>
     </div>
     <div class="bg-gradient-to-r from-[#237CFF] to-[#005ADE] p-5 mt-10 rounded-md shadow-lg">
-       <div class="flex items-center justify-between">
+       <div class="flex lg:flex-row flex-col items-center justify-between">
           <div>
              <h1 class="text-xl font-semibold text-white">Super discount on more than 100 USD</h1>
               <p class="font-semibold text-white text-sm">Have you ever finally just write dummy info</p>
           </div>
-          <button class="bg-[#FF9017] py-3 px-5 text-white font-semibold rounded-lg">Shop Now</button>
+          <button class="bg-[#FF9017] py-3 lg:w-auto w-full mt-3 px-5 text-white font-semibold rounded-lg">Shop Now</button>
        </div>
     </div>
     <div></div>
@@ -238,4 +245,8 @@ export default {
   display: block;
   width: 100%;
 }
+
+.text-shadow{
+    text-shadow: 1px 1px 12px rgba(128, 127, 124, 0.71);
+  }
 </style>
