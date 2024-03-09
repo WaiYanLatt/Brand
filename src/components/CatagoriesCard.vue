@@ -26,7 +26,7 @@ export default {
         :class="{ '!w-full': grid === true }"
       />
     </router-link>
-    <div class="p-5">
+    <div class="lg:p-5 p-3">
       <h1 class="font-semibold text-lg">{{ category.title }}</h1>
       <h1 class="font-semibold text-xl">
         ${{ category.price }}
@@ -45,7 +45,7 @@ export default {
           <i class="fa-solid fa-star text-orange-200"></i>
         </div>
         <span
-          class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3"
+          class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded lg:ms-3 ms-1"
           >{{ category.rating }}</span
         >
       </div>
