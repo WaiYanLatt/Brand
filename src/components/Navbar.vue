@@ -89,7 +89,7 @@ export default {
 
 <template>
   <nav class="fixed top-0 w-full z-20">
-    <div class="container-fluid mx-auto lg:px-28 px-5 bg-white py-3 border-b w-full">
+    <div class="container-fluid mx-auto lg:px-28 px-2 bg-white py-3 border-b w-full">
       <div class="flex justify-between items-center">
         <router-link to="/">
           <div class="flex items-center">
@@ -156,7 +156,7 @@ export default {
                 class="fa-solid fa-xmark text-2xl"
                 v-show="showIcon === true"
               ></i>
-              <h1 class="font-semibold  lg:ml-3 ml-1 text-nowrap">All category</h1>
+              <h1 class="font-semibold  lg:ml-3 ml-1 !text-nowrap">All category</h1>
             </li>
             <a href="#slide" @click="toHome">
               <li class="hover:text-gray-400">
@@ -165,7 +165,7 @@ export default {
             </a>
             <a href="#deal" @click="toHome">
               <li class="hover:text-gray-400">
-                <h1 class="font-semibold text-nowrap">Hot offers</h1>
+                <h1 class="font-semibold !text-nowrap">Hot offers</h1>
               </li>
             </a>
             <a href="#gift" @click="toHome" class="lg:block hidden">
@@ -175,7 +175,7 @@ export default {
             </a>
             <a href="#menu" @click="toHome">
               <li class="hover:text-gray-400">
-                <h1 class="font-semibold text-nowrap">Menu Items</h1>
+                <h1 class="font-semibold !text-nowrap">Menu Items</h1>
               </li>
             </a>
             <a href="#service" @click="toHome" class="lg:block hidden">

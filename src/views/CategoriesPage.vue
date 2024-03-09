@@ -57,7 +57,7 @@ export default {
 <template>
   <div class="container mx-auto lg:px-16 px-5 lg:mt-40 mt-36 lg:mb-20 mb-10">
     <div class="flex lg:flex-row flex-col relative">
-      <div class="w-[350px]  lg:min-h-screen h-auto mb-10 lg:mb-0">
+      <div class="lg:w-[350px] w-full lg:min-h-screen h-auto mb-10 lg:mb-0">
         <div class="border-t mt-3">
           <h1 class="font-semibold text-xl mt-3">Category</h1>
           <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
