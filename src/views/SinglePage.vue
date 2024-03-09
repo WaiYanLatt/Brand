@@ -17,6 +17,7 @@ export default {
       useProduct: useProduct(),
       currentSlide: 0,
       stockPecs: 0,
+      alertShow : false,
     };
   },
   components: {
@@ -57,12 +58,30 @@ export default {
     reset() {
       this.stockPecs = 0;
     },
+     addProduct() {
+       if(this.stockPecs !== 0){
+        const guestOrder = this.useProduct.products.find(pro => pro.id === this.currentProduct.id);
+        this.useProduct.order.push(guestOrder);
+       } else {
+         this.alertShow = true;
+         setTimeout(() => {
+           this.alertShow = false;
+         }, 2000);
+       }
+     },
   },
 };
 </script>
 
 <template>
   <div class="container mx-auto px-16 mt-40 mb-20">
+       <!-- alert box -->
+       <div
+      v-show="alertShow === true"
+      class="bg-white fixed shadow-lg border lg:bottom-[30%] z-20 bottom-[50%] left-[25%] w-[50%] lg:w-[50%] lg:py-5 py-3 rounded-lg"
+    >
+      <h1 class="text-center font-semibold text-shadow lg:text-[15px] text-xs">Please add 1 pec or more but 1pec order in cart because just ui.</h1>
+    </div>
    <router-link to="/">
     <button class="bg-white w-12 h-12 shadow-lg border rounded-full mb-10">
         <i class="fa-solid fa-reply"></i>
@@ -175,7 +194,7 @@ export default {
               Reset
             </button>
           </div>
-          <button class="w-full text-white font-semibold bg-blue-500 py-3 mt-5 rounded-lg">
+          <button @click="addProduct" class="w-full text-white font-semibold bg-blue-500 py-3 mt-5 rounded-lg">
             <i class="fa-solid fa-cart-shopping mr-5"></i>
               Buy {{ currentProduct.title }}
           </button>
@@ -197,6 +216,7 @@ export default {
           <button class="bg-[#FF9017] py-3 px-5 text-white font-semibold rounded-lg">Shop Now</button>
        </div>
     </div>
+    <div></div>
   </div>
 </template>
 

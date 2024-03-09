@@ -44,8 +44,8 @@ export default {
 
 <template>
   <div class="bg-white shadow-md w-full border rounded-md mt-10">
-    <div class="flex h-64">
-      <div class="w-[300px] border-e p-5 h-full">
+    <div class="flex lg:flex-row flex-col lg:h-64 h-full">
+      <div class="lg:w-[300px] w-full border-e p-5 h-full">
         <h1 class="font-semibold text-2xl">Deal and offers</h1>
         <p class="font-semibold text-md text-gray-500">Hygience equipments</p>
         <div class="grid grid-cols-3 gap-1 mt-5">
@@ -63,7 +63,7 @@ export default {
           </div>
         </div>
       </div>
-      <DealCard  class="w-[200px] p-5" v-for="product in getMenWear" :product="product" :key="product.id"/>
+      <DealCard  class="lg:w-[200px] w-full lg:p-5 p-2" v-for="product in getMenWear" :product="product" :key="product.id"/>
     </div>
   </div>
 </template>

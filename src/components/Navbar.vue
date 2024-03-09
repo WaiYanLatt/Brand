@@ -19,7 +19,7 @@ export default {
     orderCard: orderCard,
   },
   watch: {
-    searchQuery: "searchCity",
+    searchQuery: "searchProduct",
   },
   methods: {
     showCat() {
@@ -65,7 +65,7 @@ export default {
       this.useCategories.setCategories(categories);
       this.useCategories.itemsName = "Mens-shoes";
     },
-    async searchCity() {
+    async searchProduct() {
       const results = await this.useSearch.getSearch(
         this.useSearch.searchQuery.toLowerCase()
       );
@@ -89,30 +89,30 @@ export default {
 
 <template>
   <nav class="fixed top-0 w-full z-20">
-    <div class="container-fluid mx-auto px-28 bg-white py-3 border-b w-full">
+    <div class="container-fluid mx-auto lg:px-28 px-5 bg-white py-3 border-b w-full">
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <div
-            class="bg-blue-500 rounded-md w-10 h-10 flex items-center justify-center"
+            class="bg-blue-500 rounded-md w-10 h-10 lg:mr-0  flex items-center justify-center"
           >
             <i class="fa-solid fa-bag-shopping text-white"></i>
           </div>
-          <h1 class="text-2xl font-semibold text-blue-500 ml-3">Brand</h1>
+          <h1 class="text-2xl font-semibold text-blue-500 ml-3 hidden lg:block">Brand</h1>
         </div>
         <div>
           <form
-            @submit.prevent="searchCity"
-            class="border-2 flex items-center border-blue-500 w-[650px] rounded-lg overflow-hidden"
+            @submit.prevent="searchProduct"
+            class="border-2 flex items-center border-blue-500 w-[200px] lg:w-[650px] rounded-lg overflow-hidden"
           >
             <input
               type="text"
-              class="focus:outline-none border-0 pl-3 py-2 font-semibold border-e-2 w-[550px] border-e-blue-500"
+              class="focus:outline-none border-0 pl-3 py-2 font-semibold border-e-2 w-[150px] lg:w-[550px] border-e-blue-500"
               v-model="useSearch.searchQuery"
               placeholder="Search"
             />
             <button
-              class="bg-blue-500 py-2 w-[100px] text-white font-semibold"
-              @click.prevent="searchCity"
+              class="bg-blue-500 py-2 lg:w-[100px] w-[50px] text-white font-semibold"
+              @click.prevent="searchProduct"
             >
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -140,11 +140,11 @@ export default {
       </div>
     </div>
     <div
-      class="container-fluid mx-auto relative px-28 bg-white py-3 border-b w-full"
+      class="container-fluid mx-auto relative lg:px-28 px-5 bg-white py-3 border-b w-full"
     >
       <div>
         <div>
-          <ul class="flex *:mr-5 *:duration-500 *:cursor-pointer">
+          <ul class="flex lg:*:mr-5 *:mr-2 *:duration-500 *:cursor-pointer">
             <li class="flex items-center hover:text-gray-400" @click="showCat">
               <i
                 class="fa-solid fa-bars text-lg"
@@ -166,7 +166,7 @@ export default {
                 <h1 class="font-semibold">Hot offers</h1>
               </li>
             </a>
-            <a href="#gift" @click="toHome">
+            <a href="#gift" @click="toHome" class="lg:block hidden">
               <li class="hover:text-gray-400">
                 <h1 class="font-semibold">Gift boxes</h1>
               </li>
@@ -185,10 +185,10 @@ export default {
         </div>
       </div>
       <div
-        class="backdrop-blur-3xl py-3 border-t transition-all duration-300 absolute top-0 -z-10 p-5 w-full"
-        :class="{ 'top-12 z-[10]': cat === true }"
+        class="backdrop-blur-3xl lg:py-3 py-1  border-t transition-all duration-300 absolute lg:top-0 top-[-200px] -z-10 lg:p-5 p-3 lg:w-full w-[350px]"
+        :class="{ 'lg:top-12 top-[49px] z-[10]': cat === true }"
       >
-        <ul class="flex items-center *:mr-5">
+        <ul class="flex lg:flex-row flex-col lg:items-center items-start lg:*:mr-5 *:mr-3">
           <router-link to="/category">
             <li
               @click="smartphones"

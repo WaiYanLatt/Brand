@@ -25,10 +25,10 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-16 mt-36 mb-32">
-    <div class="w-full bg-white p-5 rounded-xl shadow-lg border" id="slide">
-      <div class="flex">
-        <div class="w-56">
+  <div class="container mx-auto lg:px-16 px-5 lg:mt-36 mt-48 lg:mb-32 mb-10">
+    <div class="w-full bg-white lg:p-5 p-3 rounded-xl shadow-lg border" id="slide">
+      <div class="flex lg:flex-row flex-col">
+        <div class="lg:w-56 w-full hidden lg:block">
           <ul class="*:font-semibold *:p-2 *:cursor-pointer *:rounded-md">
             <li
               class="hover:bg-[#E5F1FF] duration-500 text-gray-400"
@@ -105,13 +105,13 @@ export default {
             </li>
           </ul>
         </div>
-        <div class="w-[600px] ml-5">
+        <div class="lg:w-[600px] w-full lg:ml-5 mt-5 lg:mt-0 lg:block hidden">
           <SlideCard
             v-for="slide in useSlide.filteredSlides"
             :slide="slide"
           ></SlideCard>
         </div>
-        <div class="w-64 ml-5">
+        <div class="lg:w-64 w-full lg:ml-5">
           <div class="bg-[#E5F1FF]  p-2  rounded-md">
             <div class="flex items-center">
               <div
@@ -139,8 +139,8 @@ export default {
       </div>
     </div>
     <Deal id="deal"/>
-    <ShowHome id="gift"/>
-    <Electonic/>
+    <ShowHome id="gift" class="lg:block hidden"/>
+    <Electonic class="lg:block hidden"/>
     <Recommended id="menu"/>
     <Service id="service"/>
   </div>

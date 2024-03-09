@@ -19,7 +19,7 @@ export default {
 <template>
   <div class="mt-10">
     <h1 class="font-semibold text-2xl">Our extra services</h1>
-    <div class="grid grid-cols-4 gap-3 mt-7">
+    <div class="grid lg:grid-cols-4 grid-cols-2 gap-3 mt-7">
       <ServiceCard
         v-for="service in useServiceAndregion.Services"
         :service="service"
@@ -27,7 +27,7 @@ export default {
       />
     </div>
     <h1 class="font-semibold text-2xl mt-10">Suppliers by region</h1>
-    <div class="grid grid-cols-5 gap-3 mt-7">
+    <div class="grid lg:grid-cols-5 grid-cols-1 gap-3 mt-7">
       <CountryCard
         v-for="region in useServiceAndregion.Regions"
         :region="region"
