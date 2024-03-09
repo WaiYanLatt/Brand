@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto lg:px-16 px-5 lg:mt-36 mt-48 lg:mb-32 mb-10">
+  <div class="container mx-auto lg:px-16 px-5  mt-36 lg:mb-32 mb-10">
     <div class="w-full bg-white lg:p-5 p-3 rounded-xl shadow-lg border" id="slide">
       <div class="flex lg:flex-row flex-col">
         <div class="lg:w-56 w-full hidden lg:block">
