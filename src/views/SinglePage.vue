@@ -88,8 +88,8 @@ export default {
     </button>
    </router-link>
     <div class="bg-white shadow-md border min-h-[500px] rounded-lg py-5">
-      <div class="flex lg:flex-row flex-col">
-        <div class="lg:w-[650px] w-full p-5">
+      <div class="flex lg:flex-row md:flex-row flex-col">
+        <div class="lg:w-[650px] md:w-[300px] w-full p-5">
           <swiper
             :effect="'coverflow'"
             :grabCursor="true"
@@ -210,17 +210,17 @@ export default {
     </div>
     <div class="bg-white shadow-md border min-h-[300px] rounded-lg p-5 mt-20">
        <h1 class="font-semibold text-xl">Related Products</h1>
-       <div class="grid lg:grid-cols-5 grid-cols-2 gap-5 mt-10">
+       <div class="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-5 mt-10">
         <RelCard v-for="rel in relatedProduct" :rel="rel"/>
        </div>
     </div>
     <div class="bg-gradient-to-r from-[#237CFF] to-[#005ADE] p-5 mt-10 rounded-md shadow-lg">
-       <div class="flex lg:flex-row flex-col items-center justify-between">
+       <div class="flex lg:flex-row md:flex-row flex-col items-center justify-between">
           <div>
              <h1 class="text-xl font-semibold text-white">Super discount on more than 100 USD</h1>
               <p class="font-semibold text-white text-sm">Have you ever finally just write dummy info</p>
           </div>
-          <button class="bg-[#FF9017] py-3 lg:w-auto w-full mt-3 px-5 text-white font-semibold rounded-lg">Shop Now</button>
+          <button class="bg-[#FF9017] py-3 lg:w-auto md:w-auto w-full mt-3 px-5 text-white font-semibold rounded-lg">Shop Now</button>
        </div>
     </div>
     <div></div>

@@ -21,7 +21,7 @@
             <i class="fa-brands fa-youtube"></i>
           </div>
         </div>
-      <div class="grid lg:grid-cols-5 grid-cols-2">
+      <div class="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2">
         <div>
           <h1 class="font-semibold text-md">About</h1>
           <ul class="*:font-semibold *:text-md *:text-gray-500 mt-3 *:mt-1">
@@ -41,7 +41,7 @@
           </ul>
         </div>
         <div>
-          <h1 class="font-semibold text-md mt-5 lg:mt-0">Information</h1>
+          <h1 class="font-semibold text-md mt-5 md:mt-0 lg:mt-0">Information</h1>
           <ul class="*:font-semibold *:text-md *:text-gray-500 mt-3 *:mt-1">
             <li>Help Center</li>
             <li>Money Refund</li>
@@ -50,7 +50,7 @@
           </ul>
         </div>
         <div>
-          <h1 class="font-semibold text-md  mt-5 lg:mt-0">For users</h1>
+          <h1 class="font-semibold text-md  mt-5 md:mt-0 lg:mt-0">For users</h1>
           <ul class="*:font-semibold *:text-md *:text-gray-500 mt-3 *:mt-1">
             <li>Login</li>
             <li>Register</li>
@@ -58,7 +58,7 @@
             <li>My Orders</li>
           </ul>
         </div>
-        <div class="lg:block hidden">
+        <div class="lg:block hidden md:block">
           <h1 class="font-semibold text-md">Get App</h1>
           <div class="mt-3">
             <img src="/playstore.png" alt="" class="w-[170px]">

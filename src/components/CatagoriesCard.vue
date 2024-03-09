@@ -22,7 +22,7 @@ export default {
       <img
         :src="category.images[0]"
         alt=""
-        class="lg:w-[210px] w-[150px] lg:h-[230px] h-full hover:brightness-75 duration-500 cursor-pointer"
+        class="lg:w-[210px] w-[150px] lg:h-[230px] md:h-[200px] md:w-[200px] min-h-full hover:brightness-75 duration-500 cursor-pointer"
         :class="{ '!w-full': grid === true }"
       />
     </router-link>

@@ -27,8 +27,8 @@ export default {
 <template>
   <div class="container mx-auto lg:px-16 px-5  mt-36 lg:mb-32 mb-10">
     <div class="w-full bg-white lg:p-5 p-3 rounded-xl shadow-lg border" id="slide">
-      <div class="flex lg:flex-row flex-col">
-        <div class="lg:w-56 w-full hidden lg:block">
+      <div class="flex lg:flex-row md:flex-row flex-col">
+        <div class="w-56 md:w-64 hidden lg:block md:block">
           <ul class="*:font-semibold *:p-2 *:cursor-pointer *:rounded-md">
             <li
               class="hover:bg-[#E5F1FF] duration-500 text-gray-400"
@@ -105,13 +105,13 @@ export default {
             </li>
           </ul>
         </div>
-        <div class="lg:w-[600px] w-full lg:ml-5 mt-5 lg:mt-0 lg:block hidden">
+        <div class="lg:w-[600px] w-full lg:ml-5  md:ml-5 mt-5 lg:mt-0 lg:block md:block hidden">
           <SlideCard
             v-for="slide in useSlide.filteredSlides"
             :slide="slide"
           ></SlideCard>
         </div>
-        <div class="lg:w-64 w-full lg:ml-5">
+        <div class="lg:w-64 w-full lg:ml-5 lg:block md:hidden block">
           <div class="bg-[#E5F1FF]  p-2  rounded-md">
             <div class="flex items-center">
               <div
@@ -138,7 +138,7 @@ export default {
         </div>
       </div>
     </div>
-    <Deal id="deal"/>
+    <Deal id="deal" class="md:hidden block"/>
     <ShowHome id="gift" class="lg:block hidden"/>
     <Electonic class="lg:block hidden"/>
     <Recommended id="menu"/>

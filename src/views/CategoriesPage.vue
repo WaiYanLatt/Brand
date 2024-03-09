@@ -56,11 +56,11 @@ export default {
 
 <template>
   <div class="container mx-auto lg:px-16 px-5 lg:mt-40 mt-36 lg:mb-20 mb-10">
-    <div class="flex lg:flex-row flex-col relative">
-      <div class="lg:w-[350px] w-full lg:min-h-screen h-auto mb-10 lg:mb-0">
+    <div class="flex lg:flex-row md:flex-row flex-col relative">
+      <div class="lg:w-[350px] md:w-[350px] w-full lg:min-h-screen h-auto mb-10 lg:mb-0">
         <div class="border-t mt-3">
           <h1 class="font-semibold text-xl mt-3">Category</h1>
-          <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
+          <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 md:grid-cols-1 grid-cols-2">
             <li>
               <button
                 class="font-semibold hover:underline duration-500"
@@ -109,7 +109,7 @@ export default {
         </div>
         <div class="border-t mt-3">
           <h1 class="font-semibold text-xl mt-3">Prices</h1>
-          <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1 grid-cols-2">
+          <ul class="lg:mt-5 mt-2 *:mt-3 grid lg:grid-cols-1  md:grid-cols-1 grid-cols-2">
             <li>
               <input
                 type="checkbox"
@@ -159,7 +159,7 @@ export default {
           </ul>
         </div>
       </div>
-      <div class="w-full lg:ml-10 ml-0 min-h-screen">
+      <div class="w-full lg:ml-10 md:ml-5 ml-0 min-h-screen">
         <div
           class="py-3 lg:px-5 px-2 z-10 bg-white shadow-sm border flex items-center sticky lg:top-32 top-36 justify-between rounded-md"
         >
@@ -185,7 +185,7 @@ export default {
         </div>
         <div
           class="grid lg:grid-cols-1 mt-5 gap-3"
-          :class="{ 'lg:!grid-cols-3 !grid-cols-1': grid === true }"
+          :class="{ 'lg:!grid-cols-3 !grid-cols-1 md:!grid-cols-2': grid === true }"
         >
           <CatagoriesCard
             v-for="category in useCategories.filteredCategory"
