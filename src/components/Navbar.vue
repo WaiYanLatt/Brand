@@ -147,7 +147,7 @@ export default {
       <div>
         <div>
           <ul class="flex lg:*:mr-5 *:mr-2 *:duration-500 *:cursor-pointer">
-            <li class="flex items-center hover:text-gray-400" @click="showCat">
+            <li class="flex items-center hover:text-gray-400 flex-shrink-0" @click="showCat">
               <i
                 class="fa-solid fa-bars text-lg"
                 v-show="showIcon === false"
@@ -156,31 +156,31 @@ export default {
                 class="fa-solid fa-xmark text-2xl"
                 v-show="showIcon === true"
               ></i>
-              <h1 class="font-semibold  lg:ml-3 ml-1 !text-nowrap">All category</h1>
+              <h1 class="font-semibold  lg:ml-3 ml-1 !text-nowrap flex-shrink-0">All category</h1>
             </li>
             <a href="#slide" @click="toHome">
               <li class="hover:text-gray-400">
                 <h1 class="font-semibold">Main</h1>
               </li>
             </a>
-            <a href="#deal" @click="toHome" class="md:hidden block">
+            <a href="#deal" @click="toHome" class="md:hidden block flex-shrink-0">
               <li class="hover:text-gray-400">
                 <h1 class="font-semibold !text-nowrap">Hot offers</h1>
               </li>
             </a>
-            <a href="#gift" @click="toHome" class="lg:block hidden">
+            <a href="#gift" @click="toHome" class="lg:block hidden flex-shrink-0">
               <li class="hover:text-gray-400">
-                <h1 class="font-semibold">Gift boxes</h1>
+                <h1 class="font-semibold flex-shrink-0">Gift boxes</h1>
               </li>
             </a>
-            <a href="#menu" @click="toHome">
+            <a href="#menu" @click="toHome" class="flex-shrink-0">
               <li class="hover:text-gray-400">
-                <h1 class="font-semibold !text-nowrap">Menu Items</h1>
+                <h1 class="font-semibold !text-nowrap flex-shrink-0">Menu Items</h1>
               </li>
             </a>
-            <a href="#service" @click="toHome" class="lg:block md:block hidden">
+            <a href="#service" @click="toHome" class="lg:block md:block hidden flex-shrink-0">
               <li class="hover:text-gray-400">
-                <h1 class="font-semibold">Services</h1>
+                <h1 class="font-semibold flex-shrink-0">Services</h1>
               </li>
             </a>
           </ul>
