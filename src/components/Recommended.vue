@@ -21,7 +21,7 @@ export default {
 <template>
   <div class="mt-16">
     <h1 class="font-semibold text-2xl">Recommended Items</h1>
-     <div class="grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 mt-10 lg:gap-2 lg:gap-y-0 md:gap-3  gap-y-5">
+     <div class="grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 mt-10 lg:gap-2 lg:gap-y-3 md:gap-3  gap-y-5">
         <Shopcard v-for="product in useProduct.products" :product="product" :key="product.id"/>
      </div>
   </div>
