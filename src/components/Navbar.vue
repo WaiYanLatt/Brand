@@ -187,7 +187,7 @@ export default {
         </div>
       </div>
       <div
-        class="backdrop-blur-3xl lg:py-3 py-1  border-t transition-all duration-300 absolute lg:top-0 top-[-200px] -z-10 lg:p-5 p-3 lg:w-full md:w-full w-[350px]"
+        class="lg:bg-white backdrop-blur-3xl  shadow-xl lg:py-3 py-1  border-t transition-all duration-300 absolute lg:top-0 top-[-200px] -z-10 lg:p-5 p-3 lg:w-full md:w-full w-[350px]"
         :class="{ 'lg:top-12 top-[49px] z-[10]': cat === true }"
       >
         <ul class="flex lg:flex-row flex-col lg:items-center items-start lg:*:mr-5 *:mr-3">
